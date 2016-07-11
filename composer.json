@@ -1,0 +1,36 @@
+{
+    "name": "novocast/cassandra",
+    "description": "Cassandra Eloquent model and Query builder for Laravel",
+    "keywords": ["laravel","eloquent","cassandra","database","model"],
+    "homepage": "https://github.com/novocast/laravel-cassandra",
+    "authors": [
+        {
+            "name": "Anthony Totton",
+            "homepage": "https://byant.co.uk"
+        }
+    ],
+    "license" : "MIT",
+    "require": {
+        "illuminate/support": "5.2.*",
+        "illuminate/container": "5.2.*",
+        "illuminate/database": "5.2.*",
+        "illuminate/events": "5.2.*",
+
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "novocast\\Cassandra": "src/",
+            "novocast\\Eloquent": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php",
+            "tests/models",
+            "tests/seeds"
+        ]
+    }
+}
