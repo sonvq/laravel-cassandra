@@ -154,7 +154,7 @@ class Connection extends \Illuminate\Database\Connection
 
         // Contact Points
         if (isset($options['contactpoints']) || ( isset($config['contactpoints']) && !empty($config['contactpoints']))) {
-            $contactPoints = $config['contactpoints']
+            $contactPoints = $config['contactpoints'];
             if (isset($options['contactpoints'])) {
                 $contactPoints = $options['contactpoints'];
             }
