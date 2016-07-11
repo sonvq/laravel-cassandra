@@ -14,8 +14,7 @@
         "illuminate/support": "5.2.*",
         "illuminate/container": "5.2.*",
         "illuminate/database": "5.2.*",
-        "illuminate/events": "5.2.*",
-
+        "illuminate/events": "5.2.*"
     },
     "require-dev": {
 
