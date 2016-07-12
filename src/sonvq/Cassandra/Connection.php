@@ -31,7 +31,7 @@ class Connection extends \Illuminate\Database\Connection
         $options = array_get($config, 'options', []);
 
         // Create the connection
-        $this->connection = $this->createConnection($config, $options);
+        $this->connection = $this->createConnection(null, $config, $options);
 
         // Select database
         $this->db = $this->connection->selectDatabase($config['database']);
