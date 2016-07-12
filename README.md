@@ -26,7 +26,7 @@ Make sure you have the Cassandra PHP driver installed. https://github.com/datast
 Installation using composer:
 
 ```
-composer require novocast/cassandra
+composer require sonvq/cassandra
 ```
 
 ### Laravel version Compatibility
@@ -39,13 +39,13 @@ composer require novocast/cassandra
 Add Cassandra service provider in `config/app.php`:
 
 ```php
-novocast\Cassandra\CassandraServiceProvider::class,
+sonvq\Cassandra\CassandraServiceProvider::class,
 ```
 
 For usage with [Lumen](http://lumen.laravel.com), add the service provider in `bootstrap/app.php`. In this file, you will also need to enable Eloquent. You must however ensure that your call to `$app->withEloquent();` is **below** where you have registered the `CassandraServiceProvider`:
 
 ```php
-$app->register('novocast\Cassandra\CassandraServiceProvider');
+$app->register('sonvq\Cassandra\CassandraServiceProvider');
 
 $app->withEloquent();
 ```
@@ -100,7 +100,7 @@ Eloquent
 This package includes a Cassandra enabled Eloquent class that you can use to define models for corresponding collections.
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class User extends Eloquent {}
 ```
@@ -108,7 +108,7 @@ class User extends Eloquent {}
 Note that we did not tell Eloquent which collection to use for the `User` model. Just like the original Eloquent, the lower-case, plural name of the class will be used as the table name unless another name is explicitly specified. You may specify a custom collection (alias for table) by defining a `collection` property on your model:
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class User extends Eloquent {
 
@@ -120,7 +120,7 @@ class User extends Eloquent {
 **NOTE:** Eloquent will also assume that each collection has a primary key column named id. You may define a `primaryKey` property to override this convention. Likewise, you may define a `connection` property to override the name of the database connection that should be used when utilizing the model.
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class MyModel extends Eloquent {
 
@@ -136,7 +136,7 @@ Everything else (should) work just like the original Eloquent model. Read more a
 You may also register an alias for the Cassandra model by adding the following to the alias array in `app/config/app.php`:
 
 ```php
-'Moloquent'       => 'novocast\Cassandra\Eloquent\Model',
+'Moloquent'       => 'sonvq\Cassandra\Eloquent\Model',
 ```
 
 This will allow you to use the registered alias like:
@@ -197,7 +197,7 @@ Extensions
 If you want to use Laravel's native Auth functionality, register this included service provider:
 
 ```php
-'novocast\Cassandra\Auth\PasswordResetServiceProvider',
+'sonvq\Cassandra\Auth\PasswordResetServiceProvider',
 ```
 
 This service provider will slightly modify the internal DatabaseReminderRepository to add support for Cassandra based password reminders. If you don't use password reminders, you don't have to register this service provider and everything else should work just fine.
@@ -215,14 +215,6 @@ If you want to use Cassandra as your database backend, change the the driver in 
         'expire' => 60,
     ],
 ```
-
-### Sentry
-
-If you want to use this library with [Sentry](https://cartalyst.com/manual/sentry), then check out https://github.com/novocast/Laravel-Cassandra-Sentry
-
-### Sessions
-
-The Cassandra session driver is available in a separate package, check out https://github.com/novocast/Laravel-Cassandra-Session
 
 Examples
 --------
@@ -377,7 +369,7 @@ User::where('bmi', 30)->decrement('bmi', 1, ['category' => 'overweight']);
 When soft deleting a model, it is not actually removed from your database. Instead, a deleted_at timestamp is set on the record. To enable soft deletes for a model, apply the SoftDeletingTrait to the model:
 
 ```php
-use novocast\Cassandra\Eloquent\SoftDeletes;
+use sonvq\Cassandra\Eloquent\SoftDeletes;
 
 class User extends Eloquent {
 
@@ -484,7 +476,7 @@ $user->email = 'john@foo.com';
 $user->save();
 ```
 
-*There is also support for upsert operations, check https://github.com/novocast/laravel-cassandra#cassandra-specific-operations*
+*There is also support for upsert operations, check https://github.com/sonvq/laravel-cassandra#cassandra-specific-operations*
 
 **Deleting a model**
 
@@ -510,7 +502,7 @@ Eloquent allows you to work with Carbon/DateTime objects instead of CassandraDat
 Example:
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class User extends Eloquent {
 
@@ -539,7 +531,7 @@ Supported relations are:
 Example:
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class User extends Eloquent {
 
@@ -554,7 +546,7 @@ class User extends Eloquent {
 And the inverse relation:
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class Item extends Eloquent {
 
@@ -569,7 +561,7 @@ class Item extends Eloquent {
 The belongsToMany relation will not use a pivot "table", but will push id's to a __related_ids__ attribute instead. This makes the second parameter for the belongsToMany method useless. If you want to define custom keys for your relation, set it to `null`:
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class User extends Eloquent {
 
@@ -591,7 +583,7 @@ If you want to embed models, rather than referencing them, you can use the `embe
 **REMEMBER**: these relations return Eloquent collections, they don't return query builder objects!
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class User extends Eloquent {
 
@@ -668,7 +660,7 @@ Embedded relations will return a Collection of embedded items instead of a query
 The embedsOne relation is similar to the EmbedsMany relation, but only embeds a single model.
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class Book extends Eloquent {
 
@@ -716,12 +708,12 @@ $book->author()->save($newAuthor);
 
 ### MySQL Relations
 
-If you're using a hybrid Cassandra and SQL setup, you're in luck! The model will automatically return a Cassandra- or SQL-relation based on the type of the related model. Of course, if you want this functionality to work both ways, your SQL-models will need use the `novocast\Cassandra\Eloquent\HybridRelations` trait. Note that this functionality only works for hasOne, hasMany and belongsTo relations.
+If you're using a hybrid Cassandra and SQL setup, you're in luck! The model will automatically return a Cassandra- or SQL-relation based on the type of the related model. Of course, if you want this functionality to work both ways, your SQL-models will need use the `sonvq\Cassandra\Eloquent\HybridRelations` trait. Note that this functionality only works for hasOne, hasMany and belongsTo relations.
 
 Example SQL-based User model:
 
 ```php
-use novocast\Cassandra\Eloquent\HybridRelations;
+use sonvq\Cassandra\Eloquent\HybridRelations;
 
 class User extends Eloquent {
 
@@ -740,7 +732,7 @@ class User extends Eloquent {
 And the Cassandra-based Message model:
 
 ```php
-use novocast\Cassandra\Eloquent\Model as Eloquent;
+use sonvq\Cassandra\Eloquent\Model as Eloquent;
 
 class Message extends Eloquent {
 
