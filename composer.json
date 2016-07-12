@@ -1,11 +1,11 @@
 {
-    "name": "novocast/cassandra",
+    "name": "sonvq/cassandra",
     "description": "Cassandra Eloquent model and Query builder for Laravel",
     "keywords": ["laravel","eloquent","cassandra","database","model"],
-    "homepage": "https://github.com/novocast/laravel-cassandra",
+    "homepage": "https://github.com/sonvq-qsoftvn/laravel-cassandra",
     "authors": [
         {
-            "name": "Anthony Totton",
+            "name": "Quang Son Pro",
             "homepage": "https://byant.co.uk"
         }
     ],
@@ -21,8 +21,8 @@
     },
     "autoload": {
         "psr-0": {
-            "novocast\\Cassandra": "src/",
-            "novocast\\Eloquent": "src/"
+            "sonvq\\Cassandra": "src/",
+            "sonvq\\Eloquent": "src/"
         }
     },
     "autoload-dev": {
