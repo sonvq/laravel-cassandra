@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Eloquent;
+<?php 
+
+namespace sonvq\Cassandra\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Relations\Relation;

@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Eloquent;
+<?php 
+
+namespace sonvq\Cassandra\Eloquent;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;

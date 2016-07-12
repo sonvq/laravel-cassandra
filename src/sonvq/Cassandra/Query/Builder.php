@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Query;
+<?php 
+
+namespace sonvq\Cassandra\Query;
 
 use Closure;
 use DateTime;

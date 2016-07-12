@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Auth;
+<?php 
+
+namespace sonvq\Cassandra\Auth;
 
 use Illuminate\Auth\Passwords\PasswordResetServiceProvider as BasePasswordResetServiceProvider;
 

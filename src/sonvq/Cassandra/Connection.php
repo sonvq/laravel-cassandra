@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra;
+<?php 
+
+namespace sonvq\Cassandra;
 
 use Cassandra\Client;
 

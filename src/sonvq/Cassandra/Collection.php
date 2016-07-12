@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra;
+<?php 
+
+namespace sonvq\Cassandra;
 
 use Exception;
 use Cassandra\Collection as CassandraCollection;

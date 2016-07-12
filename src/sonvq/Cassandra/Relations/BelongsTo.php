@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Relations;
+<?php 
+
+namespace sonvq\Cassandra\Relations;
 
 class BelongsTo extends \Illuminate\Database\Eloquent\Relations\BelongsTo
 {

@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Schema;
+<?php 
+
+namespace sonvq\Cassandra\Schema;
 
 use Closure;
 use sonvq\Cassandra\Connection;

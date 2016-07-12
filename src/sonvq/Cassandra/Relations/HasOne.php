@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Relations;
+<?php 
+
+namespace sonvq\Cassandra\Relations;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasOne as EloquentHasOne;

@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Queue;
+<?php 
+
+namespace sonvq\Cassandra\Queue;
 
 use Carbon\Carbon;
 use Illuminate\Queue\DatabaseQueue;

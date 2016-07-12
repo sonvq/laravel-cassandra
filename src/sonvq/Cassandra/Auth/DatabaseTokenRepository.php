@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Auth;
+<?php 
+
+namespace sonvq\Cassandra\Auth;
 
 use Illuminate\Auth\Passwords\DatabaseTokenRepository as BaseDatabaseTokenRepository;
 use Cassandra\BSON\UTCDateTime;

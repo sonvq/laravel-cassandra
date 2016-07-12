@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Eloquent;
+<?php 
+
+namespace sonvq\Cassandra\Eloquent;
 
 use Carbon\Carbon;
 use DateTime;

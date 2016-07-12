@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Queue;
+<?php 
+
+namespace sonvq\Cassandra\Queue;
 
 use Illuminate\Database\ConnectionResolverInterface;
 use Illuminate\Queue\Connectors\ConnectorInterface;

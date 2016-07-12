@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra;
+<?php 
+
+namespace sonvq\Cassandra;
 
 use Illuminate\Support\ServiceProvider;
 use sonvq\Cassandra\Eloquent\Model;

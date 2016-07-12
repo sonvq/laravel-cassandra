@@ -1,4 +1,6 @@
-<?php namespace sonvq\Cassandra\Query;
+<?php 
+
+namespace sonvq\Cassandra\Query;
 
 use Illuminate\Database\Query\Processors\Processor as BaseProcessor;
 
